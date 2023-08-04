@@ -12,7 +12,7 @@ import "./main.css";
 import EditToDo from "../components/EditToDo";
 import AddToDo from "../components/AddToDo";
 import Typography from "@mui/material/Typography";
-import ToDoCard from "../components/ToDoCard";
+import ToDoList from "../components/ToDoList";
 import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -128,7 +128,7 @@ const Main = ({ userData, handleNewToDo, handleUpdateToDo }) => {
               variant="body1"
               align="left"
             >
-              <h2>ToDo's</h2>
+              ToDo's
             </Typography>
             <Typography
               className="headline-two"
@@ -154,7 +154,7 @@ const Main = ({ userData, handleNewToDo, handleUpdateToDo }) => {
             <SearchBar {...{ handleSearch, searchInput }} />
 
             <CustomTabPanel value={value} index={0}>
-              <ToDoCard
+              <ToDoList
                 {...{
                   handleUpdateToDo,
                   openToDos,
@@ -165,7 +165,7 @@ const Main = ({ userData, handleNewToDo, handleUpdateToDo }) => {
               />
             </CustomTabPanel>
             <CustomTabPanel value={value} index={1}>
-              <ToDoCard {...{ closedToDos, value }} />
+              <ToDoList {...{ closedToDos, value }} />
             </CustomTabPanel>
           </Box>
           <div>
